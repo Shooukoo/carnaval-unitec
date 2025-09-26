@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Japanese-inspired color palette */
+  --sakura-pink: #d8b2b1;
+  --deep-rose: #a66d7c;
+  --soft-mauve: #b57d86;
+  --light-pink: #d9adaa;
+  --snow-white: #f9ffff;
+
+  /* Design system colors */
+  --background: #f9ffff;
+  --foreground: #2d2d2d;
+  --card: #ffffff;
+  --card-foreground: #2d2d2d;
+  --popover: #ffffff;
+  --popover-foreground: #2d2d2d;
+  --primary: #a66d7c;
+  --primary-foreground: #f9ffff;
+  --secondary: #d8b2b1;
+  --secondary-foreground: #2d2d2d;
+  --muted: #f5f5f5;
+  --muted-foreground: #6b7280;
+  --accent: #b57d86;
+  --accent-foreground: #f9ffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #a66d7c;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #1a1a1a;
+  --foreground: #f9ffff;
+  --card: #2d2d2d;
+  --card-foreground: #f9ffff;
+  --popover: #2d2d2d;
+  --popover-foreground: #f9ffff;
+  --primary: #d8b2b1;
+  --primary-foreground: #1a1a1a;
+  --secondary: #a66d7c;
+  --secondary-foreground: #f9ffff;
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+  --accent: #b57d86;
+  --accent-foreground: #f9ffff;
+  --border: #374151;
+  --input: #374151;
+  --ring: #d8b2b1;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    scroll-behavior: smooth;
+  }
+}
+
+/* Sakura animation */
+@keyframes sakura-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.sakura-petal {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--sakura-pink);
+  border-radius: 50% 0 50% 0;
+  animation: sakura-fall linear infinite;
+  pointer-events: none;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* Japanese-inspired gradients */
+.gradient-sakura {
+  background: linear-gradient(135deg, var(--sakura-pink), var(--light-pink));
+}
+
+.gradient-rose {
+  background: linear-gradient(135deg, var(--deep-rose), var(--soft-mauve));
+}
+
+/* Custom utilities for Japanese theme */
+.text-sakura {
+  color: var(--sakura-pink);
+}
+.text-deep-rose {
+  color: var(--deep-rose);
+}
+.text-soft-mauve {
+  color: var(--soft-mauve);
+}
+.text-light-pink {
+  color: var(--light-pink);
+}
+.text-snow-white {
+  color: var(--snow-white);
+}
+
+.bg-sakura {
+  background-color: var(--sakura-pink);
+}
+.bg-deep-rose {
+  background-color: var(--deep-rose);
+}
+.bg-soft-mauve {
+  background-color: var(--soft-mauve);
+}
+.bg-light-pink {
+  background-color: var(--light-pink);
+}
+.bg-snow-white {
+  background-color: var(--snow-white);
+}
+
+.border-sakura {
+  border-color: var(--sakura-pink);
+}
+.border-deep-rose {
+  border-color: var(--deep-rose);
+}
