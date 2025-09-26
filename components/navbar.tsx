@@ -180,7 +180,7 @@ export default function Navbar() {
                 <div className="flex flex-col pt-20 px-6 space-y-2 h-full">
                   <div className="mb-8 text-center">
                     <h3 className="text-xl font-bold text-deep-rose">UNITEC Carnaval</h3>
-                    <p className="text-sm text-soft-mauve mt-1">祭り • Matsuri 2024</p>
+                    <p className="text-sm text-soft-mauve mt-1">祭り • Matsuri 2025</p>
                   </div>
                   {menuItems.map((item, index) => (
                     <motion.button

@@ -193,7 +193,6 @@ export default function Hero() {
                       >
                         <div className="flex justify-between items-start mb-3">
                           <div className="flex items-center space-x-2">
-                            <span className="text-lg sm:text-xl lg:text-2xl">{item.icon}</span>
                             <h3 className="font-bold text-deep-rose text-xs sm:text-sm lg:text-base">{item.title}</h3>
                             <span className="text-sm sm:text-base lg:text-lg opacity-60">{item.japaneseIcon}</span>
                           </div>

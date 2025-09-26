@@ -116,7 +116,7 @@ export default function Enlaces() {
           <p className="text-xl text-soft-mauve max-w-3xl mx-auto text-pretty">
             Selecciona tu categoría favorita y únete al grupo de WhatsApp correspondiente.
             <br />
-            <span className="text-sakura font-semibold">¡Que comience el matsuri!</span>
+            <span className="text-sakura font-semibold">¡Que comience el UNITEC!</span>
           </p>
         </motion.div>
 

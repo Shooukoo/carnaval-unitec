@@ -54,7 +54,7 @@ export default function Footer() {
           >
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-primary-foreground/80 text-sm">
-                © 2025 Carnaval UNITEC. Todos los derechos reservados.
+                © 2025 UNITEC SIS - CIB. Todos los derechos reservados.
               </p>
             </div>
           </motion.div>

@@ -136,7 +136,7 @@ export default function Organigrama() {
             🌸 Organización del Carnaval 🌸
           </h2>
           <p className="text-xl text-soft-mauve max-w-3xl mx-auto text-pretty">
-            Conoce a los equipos que hacen posible esta increíble celebración con espíritu japonés
+            Conoce a los equipos que hacen posible este UNITEC.
           </p>
           <p className="text-lg text-sakura mt-2 font-medium">組織 • Soshiki</p>
         </motion.div>
