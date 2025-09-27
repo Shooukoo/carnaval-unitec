@@ -31,6 +31,7 @@ export default function Navbar() {
     { name: "Inicio", id: "hero", icon: "home" },
     { name: "Organigrama", id: "organigrama", icon: "users" },
     { name: "Enlaces", id: "enlaces", icon: "link" },
+    { name: "Torneo", id: "torneo", icon: "trophy" },
   ]
 
   const IconHome = () => (
@@ -66,6 +67,17 @@ export default function Navbar() {
     </svg>
   )
 
+  const IconTrophy = () => (
+    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+      />
+    </svg>
+  )
+
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "home":
@@ -74,6 +86,8 @@ export default function Navbar() {
         return <IconUsers />
       case "link":
         return <IconLink />
+      case "trophy":
+        return <IconTrophy />
       default:
         return null
     }

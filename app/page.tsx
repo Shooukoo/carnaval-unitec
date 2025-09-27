@@ -4,6 +4,7 @@ import Organigrama from "@/components/organigrama"
 import Enlaces from "@/components/enlaces"
 import Footer from "@/components/footer"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import TournamentBracket from "@/components/tournament-bracket"
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <SpeedInsights />
       <Navbar />
       <Hero />
+      <TournamentBracket />
       <Organigrama />
       <Enlaces />
       <Footer />
