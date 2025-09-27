@@ -56,7 +56,7 @@ export default function Organigrama() {
       members: [
         { name: "Maritza Santibañez", role: "Jefa de Logística", photo: "./encargados/maritza.png" },
         { name: "Jesus Alfonso", role: "Coordinador", photo: "./encargados/poncho.png" },
-        { name: "Daniel Mendoza", role: "Asistente", photo: "./encargados/daniel.png" },
+        { name: "Daniel Mendez", role: "Asistente", photo: "./encargados/daniel.png" },
         { name: "David Melgoza", role: "Ayuda Presidencial", photo: "./encargados/david.png" },
         { name: "Katia Paola", role: "Supervisora", photo: "./encargados/katia.png" },
       ],
