@@ -30,6 +30,7 @@ export default function Navbar() {
   const menuItems = [
     { name: "Inicio", id: "hero", icon: "home" },
     { name: "Organigrama", id: "organigrama", icon: "users" },
+    { name: "Reglamento", id: "reglamento", icon: "book" },
     { name: "Enlaces", id: "enlaces", icon: "link" },
     { name: "Torneo", id: "torneo", icon: "trophy" },
   ]
@@ -78,6 +79,18 @@ export default function Navbar() {
     </svg>
   )
 
+  const IconBook = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M12 6H6a2 2 0 00-2 2v12a2 2 0 002 2h6m0-16h6a2 2 0 012 2v12a2 2 0 01-2 2h-6m0-16v16"
+    />
+  </svg>
+  )
+
+
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "home":
@@ -88,6 +101,8 @@ export default function Navbar() {
         return <IconLink />
       case "trophy":
         return <IconTrophy />
+      case "book":
+        return <IconBook />
       default:
         return null
     }
