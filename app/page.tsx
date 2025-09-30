@@ -26,8 +26,6 @@ export default function Home() {
       <Hero />
       <PdfViewer
         file="/docs/reglamento.pdf"
-        fileName="REGLAMENTO UNITEC 2025.pdf"
-        height="100vh"
       />
       <Organigrama />
       <Enlaces />

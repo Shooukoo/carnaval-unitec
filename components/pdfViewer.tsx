@@ -2,9 +2,19 @@
 
 import { useState, useEffect } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
-import "react-pdf/dist/Page/AnnotationLayer.css"
-import "react-pdf/dist/Page/TextLayer.css"
-import { FileText, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Download, Menu, AlertCircle, X } from "lucide-react"
+import {
+    FileText,
+    ChevronLeft,
+    ChevronRight,
+    ZoomIn,
+    ZoomOut,
+    Download,
+    Menu,
+    AlertCircle,
+    X,
+    Loader2,
+    CheckCircle2,
+} from "lucide-react"
 
 pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.mjs`
 
@@ -15,12 +25,7 @@ interface PdfViewerProps {
     className?: string
 }
 
-export default function PdfViewer({
-    file,
-    fileName,
-    height,
-    className,
-}: PdfViewerProps) {
+export default function PdfViewer({ file, fileName, height, className }: PdfViewerProps) {
     const [mounted, setMounted] = useState(false)
     const [isMobile, setIsMobile] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
@@ -30,6 +35,8 @@ export default function PdfViewer({
     const [rotation, setRotation] = useState(0)
     const [error, setError] = useState<string | null>(null)
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+    const [downloading, setDownloading] = useState(false)
+    const [downloadSuccess, setDownloadSuccess] = useState(false)
 
     useEffect(() => {
         setMounted(true)
@@ -40,6 +47,31 @@ export default function PdfViewer({
         window.addEventListener("resize", checkMobile)
         return () => window.removeEventListener("resize", checkMobile)
     }, [])
+
+    const handleDownload = async () => {
+        setDownloading(true)
+        setDownloadSuccess(false)
+
+        try {
+            const link = document.createElement("a")
+            link.href = file
+            link.download = fileName || file.split("/").pop() || "document.pdf"
+            document.body.appendChild(link)
+            link.click()
+            document.body.removeChild(link)
+
+            setTimeout(() => {
+                setDownloading(false)
+                setDownloadSuccess(true)
+                setTimeout(() => {
+                    setDownloadSuccess(false)
+                }, 2000)
+            }, 800)
+        } catch (error) {
+            console.error("Error downloading PDF:", error)
+            setDownloading(false)
+        }
+    }
 
     const handlePrevPage = () => {
         if (currentPage > 1) setCurrentPage(currentPage - 1)
@@ -66,14 +98,14 @@ export default function PdfViewer({
     }
 
     const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
-        console.log("[v0] PDF loaded successfully with", numPages, "pages")
+        console.log("PDF loaded successfully with", numPages, "pages")
         setTotalPages(numPages)
         setIsLoading(false)
         setError(null)
     }
 
     const onDocumentLoadError = (error: Error) => {
-        console.error("[v0] Error loading PDF:", error)
+        console.error("Error loading PDF:", error)
         setIsLoading(false)
         setError(error.message || "Error desconocido al cargar el PDF")
     }
@@ -95,7 +127,10 @@ export default function PdfViewer({
 
     if (isMobile) {
         return (
-            <section className="min-h-[70vh] py-20 bg-gradient-to-b from-snow-white to-light-pink/30 relative overflow-hidden px-4" id="reglamento">
+            <section
+                className="min-h-[70vh] py-20 bg-gradient-to-b from-snow-white to-light-pink/30 relative overflow-hidden px-4"
+                id="reglamento"
+            >
                 <div className="bg-gradient-to-br from-white to-[var(--sakura-light)] border-4 border-[var(--secondary)] rounded-2xl shadow-lg p-6  max-w-[80vh] min-h-[40vh]">
                     <div className="flex flex-col items-center text-center space-y-10">
                         <div>
@@ -104,14 +139,33 @@ export default function PdfViewer({
                         <p className="text-sm text-[var(--font-sans)] leading-relaxed text-prety text-deep-rose">
                             Descarga el reglamento completo en PDF para consultarlo en cualquier momento. Ayudanos a compartirlo.
                         </p>
-                        <a
-                            href={file}
-                            download={fileName}
-                            className="w-full px-6 py-4 bg-deep-rose text-snow-white border-deep-rose hover:bg-sakura hover:border-sakura text-white rounded-xl transition-all shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center gap-3 font-medium text-base touch-manipulation"
+                        <button
+                            onClick={handleDownload}
+                            disabled={downloading || downloadSuccess}
+                            className={`w-full px-6 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center gap-3 font-medium text-base touch-manipulation ${downloading
+                                    ? "bg-sakura/70 border-sakura cursor-wait"
+                                    : downloadSuccess
+                                        ? "bg-green-500 border-green-500 text-snow-white"
+                                        : "bg-deep-rose text-snow-white border-deep-rose hover:bg-sakura hover:border-sakura"
+                                } ${downloading || downloadSuccess ? "pointer-events-none" : ""}`}
                         >
-                            <Download className="w-5 h-5" />
-                            Descargar PDF
-                        </a>
+                            {downloading ? (
+                                <>
+                                    <Loader2 className="w-5 h-5 animate-spin" />
+                                    Descargando...
+                                </>
+                            ) : downloadSuccess ? (
+                                <>
+                                    <CheckCircle2 className="w-5 h-5" />
+                                    ¡Descargado!
+                                </>
+                            ) : (
+                                <>
+                                    <Download className="w-5 h-5" />
+                                    Descargar PDF
+                                </>
+                            )}
+                        </button>
                         <div className="pt-2 text-xs text-[var(--font-sans)] text-deep-rose">
                             <p>Toca el botón para descargar</p>
                         </div>
@@ -122,7 +176,10 @@ export default function PdfViewer({
     }
 
     return (
-        <section className="min-h-[50vh] py-20 bg-gradient-to-b from-snow-white to-light-pink/30 relative overflow-hidden" id="">
+        <section
+            className="min-h-[50vh] py-20 bg-gradient-to-b from-snow-white to-light-pink/30 relative overflow-hidden"
+            id=""
+        >
             <div className="bg-white border border-[var(--border)] rounded-t-2xl shadow-sm">
                 <div className="flex items-center justify-between px-3 py-2.5 gap-2 border-b border-[var(--border)]">
                     <div className="flex items-center gap-2 min-w-0 flex-1">
@@ -133,13 +190,30 @@ export default function PdfViewer({
                             <h2 className="font-medium text-[var(--elegant-black)] text-sm truncate">{fileName}</h2>
                         </div>
                     </div>
-                    <a
-                        href={file}
-                        download={fileName}
-                        className="px-3 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-1.5 text-sm flex-shrink-0 touch-manipulation"
+                    <button
+                        onClick={handleDownload}
+                        disabled={downloading || downloadSuccess}
+                        className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 text-sm flex-shrink-0 touch-manipulation ${downloading
+                                ? "bg-blue-400 text-white cursor-wait"
+                                : downloadSuccess
+                                    ? "bg-green-500 text-white"
+                                    : "bg-blue-600 text-white hover:bg-blue-700"
+                            } ${downloading || downloadSuccess ? "pointer-events-none" : ""}`}
                     >
-                        <Download className="w-4 h-4" />
-                    </a>
+                        {downloading ? (
+                            <>
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                                <span className="hidden sm:inline">Descargando...</span>
+                            </>
+                        ) : downloadSuccess ? (
+                            <>
+                                <CheckCircle2 className="w-4 h-4" />
+                                <span className="hidden sm:inline">¡Listo!</span>
+                            </>
+                        ) : (
+                            <Download className="w-4 h-4" />
+                        )}
+                    </button>
                 </div>
                 <div className="px-3 py-2 flex items-center justify-between gap-3">
                     <div className="flex items-center gap-1">
