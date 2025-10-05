@@ -25,7 +25,606 @@ interface BracketData {
 }
 
 const sampleBracketData: Record<string, BracketData> = {
-}
+    // ⚽ FÚTBOL VARONIL
+    "Fútbol-masculino": {
+        cuartos: [
+            {
+                id: "fm-q1",
+                deporte: "Fútbol",
+                categoria: "masculino",
+                equipoA: "Sistemas/Ciber",
+                equipoB: "Arquitectura",
+                resultado: "",
+                hora: "4:15 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "fm-q2",
+                deporte: "Fútbol",
+                categoria: "masculino",
+                equipoA: "Innovación",
+                equipoB: "Contabilidad",
+                resultado: "",
+                hora: "10:00 AM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "fm-q3",
+                deporte: "Fútbol",
+                categoria: "masculino",
+                equipoA: "Gestión Empresarial",
+                equipoB: "Administración",
+                resultado: "",
+                hora: "3:00 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "fm-q4",
+                deporte: "Fútbol",
+                categoria: "masculino",
+                equipoA: "Industrial",
+                equipoB: "Bioquímica",
+                resultado: "",
+                hora: "12:30 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+        ],
+        semifinal: [
+            {
+                id: "fm-s1",
+                deporte: "Fútbol",
+                categoria: "masculino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "9:00 AM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+            {
+                id: "fm-s2",
+                deporte: "Fútbol",
+                categoria: "masculino",
+                equipoA: "G3",
+                equipoB: "G4",
+                resultado: "",
+                hora: "11:30 AM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+        ],
+        final: [
+            {
+                id: "fm-f1",
+                deporte: "Fútbol",
+                categoria: "masculino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "9:00 AM",
+                ganador: "",
+                ronda: "final",
+            },
+        ],
+        campeon: [
+            {
+                id: "fm-c1",
+                deporte: "Fútbol",
+                categoria: "masculino",
+                equipoA: "",
+                equipoB: "",
+                resultado: "🏆",
+                hora: "",
+                ganador: "",
+                ronda: "campeon",
+            },
+        ],
+    },
+
+    // ⚽ FÚTBOL FEMENIL
+    "Fútbol-femenino": {
+        cuartos: [
+            {
+                id: "ff-q1",
+                deporte: "Fútbol",
+                categoria: "femenino",
+                equipoA: "Sistemas/Ciber",
+                equipoB: "Arquitectura",
+                resultado: "",
+                hora: "1:45 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "ff-q2",
+                deporte: "Fútbol",
+                categoria: "femenino",
+                equipoA: "Innovación",
+                equipoB: "Contabilidad",
+                resultado: "",
+                hora: "1:45 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "ff-q3",
+                deporte: "Fútbol",
+                categoria: "femenino",
+                equipoA: "Gestión Empresarial",
+                equipoB: "Administración",
+                resultado: "",
+                hora: "11:15 AM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "ff-q4",
+                deporte: "Fútbol",
+                categoria: "femenino",
+                equipoA: "Industrial",
+                equipoB: "Bioquímica",
+                resultado: "",
+                hora: "11:15 AM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+        ],
+        semifinal: [
+            {
+                id: "ff-s1",
+                deporte: "Fútbol",
+                categoria: "femenino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "10:15 AM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+            {
+                id: "ff-s2",
+                deporte: "Fútbol",
+                categoria: "femenino",
+                equipoA: "G3",
+                equipoB: "G4",
+                resultado: "",
+                hora: "10:15 AM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+        ],
+        final: [
+            {
+                id: "ff-f1",
+                deporte: "Fútbol",
+                categoria: "femenino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "10:00 AM",
+                ganador: "",
+                ronda: "final",
+            },
+        ],
+        campeon: [
+            {
+                id: "ff-c1",
+                deporte: "Fútbol",
+                categoria: "femenino",
+                equipoA: "",
+                equipoB: "",
+                resultado: "🏆",
+                hora: "",
+                ganador: "",
+                ronda: "campeon",
+            },
+        ],
+    },
+
+    // 🏀 BÁSQUETBOL VARONIL
+    "Básquetbol-masculino": {
+        cuartos: [
+            {
+                id: "bm-q1",
+                deporte: "Básquetbol",
+                categoria: "masculino",
+                equipoA: "Sistemas/Ciber",
+                equipoB: "Arquitectura",
+                resultado: "",
+                hora: "10:00 AM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "bm-q2",
+                deporte: "Básquetbol",
+                categoria: "masculino",
+                equipoA: "Innovación",
+                equipoB: "Contabilidad",
+                resultado: "",
+                hora: "12:30 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "bm-q3",
+                deporte: "Básquetbol",
+                categoria: "masculino",
+                equipoA: "Gestión Empresarial",
+                equipoB: "Administración",
+                resultado: "",
+                hora: "1:45 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "bm-q4",
+                deporte: "Básquetbol",
+                categoria: "masculino",
+                equipoA: "Industrial",
+                equipoB: "Bioquímica",
+                resultado: "",
+                hora: "11:15 AM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+        ],
+        semifinal: [
+            {
+                id: "bm-s1",
+                deporte: "Básquetbol",
+                categoria: "masculino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "12:00 PM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+            {
+                id: "bm-s2",
+                deporte: "Básquetbol",
+                categoria: "masculino",
+                equipoA: "G3",
+                equipoB: "G4",
+                resultado: "",
+                hora: "11:00 AM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+        ],
+        final: [
+            {
+                id: "bm-f1",
+                deporte: "Básquetbol",
+                categoria: "masculino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "3:30 PM",
+                ganador: "",
+                ronda: "final",
+            },
+        ],
+        campeon: [
+            {
+                id: "bm-c1",
+                deporte: "Básquetbol",
+                categoria: "masculino",
+                equipoA: "",
+                equipoB: "",
+                resultado: "🏆",
+                hora: "",
+                ganador: "",
+                ronda: "campeon",
+            },
+        ],
+    },
+
+    // 🏀 BÁSQUETBOL FEMENIL
+    "Básquetbol-femenino": {
+        cuartos: [
+            {
+                id: "bf-q1",
+                deporte: "Básquetbol",
+                categoria: "femenino",
+                equipoA: "Sistemas/Ciber",
+                equipoB: "Arquitectura",
+                resultado: "",
+                hora: "11:15 AM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "bf-q2",
+                deporte: "Básquetbol",
+                categoria: "femenino",
+                equipoA: "Innovación",
+                equipoB: "Contabilidad",
+                resultado: "",
+                hora: "10:00 AM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "bf-q3",
+                deporte: "Básquetbol",
+                categoria: "femenino",
+                equipoA: "Gestión Empresarial",
+                equipoB: "Administración",
+                resultado: "",
+                hora: "12:30 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "bf-q4",
+                deporte: "Básquetbol",
+                categoria: "femenino",
+                equipoA: "Industrial",
+                equipoB: "Bioquímica",
+                resultado: "",
+                hora: "1:45 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+        ],
+        semifinal: [
+            {
+                id: "bf-s1",
+                deporte: "Básquetbol",
+                categoria: "femenino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "11:00 AM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+            {
+                id: "bf-s2",
+                deporte: "Básquetbol",
+                categoria: "femenino",
+                equipoA: "G3",
+                equipoB: "G4",
+                resultado: "",
+                hora: "12:00 PM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+        ],
+        final: [
+            {
+                id: "bf-f1",
+                deporte: "Básquetbol",
+                categoria: "femenino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "2:30 PM",
+                ganador: "",
+                ronda: "final",
+            },
+        ],
+        campeon: [
+            {
+                id: "bf-c1",
+                deporte: "Básquetbol",
+                categoria: "femenino",
+                equipoA: "",
+                equipoB: "",
+                resultado: "🏆",
+                hora: "",
+                ganador: "",
+                ronda: "campeon",
+            },
+        ],
+    },
+
+    // 🏐 VÓLEIBOL VARONIL
+    "Vóleibol-masculino": {
+        cuartos: [
+            {
+                id: "vm-q1",
+                deporte: "Vóleibol",
+                categoria: "masculino",
+                equipoA: "Sistemas/Ciber",
+                equipoB: "Arquitectura",
+                resultado: "",
+                hora: "12:00 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "vm-q2",
+                deporte: "Vóleibol",
+                categoria: "masculino",
+                equipoA: "Innovación Agrícola",
+                equipoB: "Contabilidad",
+                resultado: "",
+                hora: "5:00 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "vm-q3",
+                deporte: "Vóleibol",
+                categoria: "masculino",
+                equipoA: "Gestión Empresarial",
+                equipoB: "Administración",
+                resultado: "",
+                hora: "4:00 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "vm-q4",
+                deporte: "Vóleibol",
+                categoria: "masculino",
+                equipoA: "Industrial",
+                equipoB: "Bioquímica",
+                resultado: "",
+                hora: "2:00 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+        ],
+        semifinal: [
+            {
+                id: "vm-s1",
+                deporte: "Vóleibol",
+                categoria: "masculino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "10:00 AM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+            {
+                id: "vm-s2",
+                deporte: "Vóleibol",
+                categoria: "masculino",
+                equipoA: "G3",
+                equipoB: "G4",
+                resultado: "",
+                hora: "1:00 PM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+        ],
+        final: [
+            {
+                id: "vm-f1",
+                deporte: "Vóleibol",
+                categoria: "masculino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "1:30 PM",
+                ganador: "",
+                ronda: "final",
+            },
+        ],
+        campeon: [
+            {
+                id: "vm-c1",
+                deporte: "Vóleibol",
+                categoria: "masculino",
+                equipoA: "",
+                equipoB: "",
+                resultado: "🏆",
+                hora: "",
+                ganador: "",
+                ronda: "campeon",
+            },
+        ],
+    },
+
+    // 🏐 VÓLEIBOL FEMENIL
+    "Vóleibol-femenino": {
+        cuartos: [
+            {
+                id: "vf-q1",
+                deporte: "Vóleibol",
+                categoria: "femenino",
+                equipoA: "Sistemas/Ciber",
+                equipoB: "Arquitectura",
+                resultado: "",
+                hora: "3:00 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "vf-q2",
+                deporte: "Vóleibol",
+                categoria: "femenino",
+                equipoA: "Innovación Agrícola",
+                equipoB: "Contabilidad",
+                resultado: "",
+                hora: "11:00 AM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "vf-q3",
+                deporte: "Vóleibol",
+                categoria: "femenino",
+                equipoA: "Gestión Empresarial",
+                equipoB: "Administración",
+                resultado: "",
+                hora: "10:00 AM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+            {
+                id: "vf-q4",
+                deporte: "Vóleibol",
+                categoria: "femenino",
+                equipoA: "Industrial",
+                equipoB: "Bioquímica",
+                resultado: "",
+                hora: "1:00 PM",
+                ganador: "",
+                ronda: "cuartos",
+            },
+        ],
+        semifinal: [
+            {
+                id: "vf-s1",
+                deporte: "Vóleibol",
+                categoria: "femenino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "11:00 AM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+            {
+                id: "vf-s2",
+                deporte: "Vóleibol",
+                categoria: "femenino",
+                equipoA: "G3",
+                equipoB: "G4",
+                resultado: "",
+                hora: "12:00 PM",
+                ganador: "",
+                ronda: "semifinal",
+            },
+        ],
+        final: [
+            {
+                id: "vf-f1",
+                deporte: "Vóleibol",
+                categoria: "femenino",
+                equipoA: "G1",
+                equipoB: "G2",
+                resultado: "",
+                hora: "12:30 PM",
+                ganador: "",
+                ronda: "final",
+            },
+        ],
+        campeon: [
+            {
+                id: "vf-c1",
+                deporte: "Vóleibol",
+                categoria: "femenino",
+                equipoA: "",
+                equipoB: "",
+                resultado: "🏆",
+                hora: "",
+                ganador: "",
+                ronda: "campeon",
+            },
+        ],
+    },
+};
 
 const sportIcons = {
     Fútbol: "",
@@ -80,7 +679,7 @@ export default function TournamentBracket() {
                             <div className="flex items-center gap-2 justify-center">
                                 <span className="text-lg">{sportIcons[match.deporte as keyof typeof sportIcons] || "🏆"}</span>
                                 <span className="font-medium text-sm text-deep-rose">
-                                    {match.deporte} {match.categoria === "femenino" ? "♀" : "♂"}
+                                    {match.deporte} {match.categoria === "femenino" ? "" : ""}
                                 </span>
                             </div>
                         </div>
@@ -170,8 +769,8 @@ export default function TournamentBracket() {
                                 variant={selectedSport === sport ? "default" : "outline"}
                                 onClick={() => setSelectedSport(sport)}
                                 className={`px-4 py-2 rounded-full text-sm font-medium ${selectedSport === sport
-                                        ? "bg-deep-rose text-snow-white hover:bg-soft-mauve"
-                                        : "border-sakura text-deep-rose hover:bg-light-pink hover:text-deep-rose"
+                                    ? "bg-deep-rose text-snow-white hover:bg-soft-mauve"
+                                    : "border-sakura text-deep-rose hover:bg-light-pink hover:text-deep-rose"
                                     }`}
                             >
                                 {sportIcons[sport as keyof typeof sportIcons]} {sport}
@@ -187,8 +786,8 @@ export default function TournamentBracket() {
                                 variant={selectedCategory === category ? "default" : "outline"}
                                 onClick={() => setSelectedCategory(category)}
                                 className={`px-4 py-2 rounded-full text-sm font-medium ${selectedCategory === category
-                                        ? "bg-soft-mauve text-snow-white hover:bg-deep-rose"
-                                        : "border-sakura text-soft-mauve hover:bg-light-pink hover:text-soft-mauve"
+                                    ? "bg-soft-mauve text-snow-white hover:bg-deep-rose"
+                                    : "border-sakura text-soft-mauve hover:bg-light-pink hover:text-soft-mauve"
                                     }`}
                             >
                                 {category === "femenino" ? "♀ Femenino" : "♂ Masculino"}

@@ -5,6 +5,7 @@ import Organigrama from "@/components/organigrama"
 import Enlaces from "@/components/enlaces"
 import Footer from "@/components/footer"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import TournamentBracket from "@/components/tournament-bracket"
 
 const PdfViewer = dynamic(() => import("@/components/pdfViewer"), {
   ssr: false,
@@ -24,6 +25,7 @@ export default function Home() {
       <SpeedInsights />
       <Navbar />
       <Hero />
+      <TournamentBracket/>
       <PdfViewer
         file="/docs/reglamento.pdf"
       />
