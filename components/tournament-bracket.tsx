@@ -667,7 +667,7 @@ export default function TournamentBracket() {
             <Card className="bg-card border-2 border-sakura shadow-sm hover:shadow-lg hover:border-deep-rose transition-all duration-300 rounded-lg overflow-hidden">
                 {match.ronda === "campeon" ? (
                     <div className="p-4 text-center gradient-rose">
-                        <div className="text-3xl mb-2">👑</div>
+                        <div className="text-3xl mb-2"></div>
                         <div className="font-bold text-snow-white text-xl">{match.equipoA}</div>
                         <div className="text-light-pink text-sm mt-1">
                             Campeón {match.deporte} {match.categoria === "femenino" ? "Femenino" : "Masculino"}
@@ -677,7 +677,7 @@ export default function TournamentBracket() {
                     <>
                         <div className="bg-light-pink px-4 py-3 border-b border-sakura">
                             <div className="flex items-center gap-2 justify-center">
-                                <span className="text-lg">{sportIcons[match.deporte as keyof typeof sportIcons] || "🏆"}</span>
+                                <span className="text-lg">{sportIcons[match.deporte as keyof typeof sportIcons] || ""}</span>
                                 <span className="font-medium text-sm text-deep-rose">
                                     {match.deporte} {match.categoria === "femenino" ? "" : ""}
                                 </span>
@@ -709,7 +709,6 @@ export default function TournamentBracket() {
 
                             {match.hora && (
                                 <div className="flex items-center justify-center gap-2 text-soft-mauve text-sm">
-                                    <span>🕐</span>
                                     <span>{match.hora}</span>
                                 </div>
                             )}
@@ -728,7 +727,7 @@ export default function TournamentBracket() {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center">
                 <div className="text-center">
-                    <div className="animate-spin text-4xl mb-4">🏆</div>
+                    <div className="animate-spin text-4xl mb-4"></div>
                     <p className="text-muted-foreground">Cargando bracket del torneo universitario...</p>
                 </div>
             </div>
@@ -739,7 +738,7 @@ export default function TournamentBracket() {
         return (
             <div className="min-h-screen bg-background flex items-center justify-center">
                 <div className="text-center">
-                    <div className="text-6xl mb-4 opacity-30">🏆</div>
+                    <div className="text-6xl mb-4 opacity-30"></div>
                     <h3 className="text-lg font-medium text-deep-rose mb-2">No hay datos del torneo</h3>
                     <p className="text-sm text-muted-foreground">Los resultados aparecerán aquí cuando estén disponibles</p>
                 </div>
@@ -751,7 +750,7 @@ export default function TournamentBracket() {
         <div id="torneo" className="min-h-screen bg-background">
             <div className="container mx-auto px-4 py-8">
                 <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-8">
-                    <h1 className="text-3xl md:text-4xl font-bold text-deep-rose mb-2">🏆 Torneo del UNITEC</h1>
+                    <h1 className="text-3xl md:text-4xl font-bold text-deep-rose mb-2">Torneo del UNITEC</h1>
                     <p className="text-muted-foreground">Sigue el progreso de cada carrera hacia la victoria</p>
                 </motion.div>
 
